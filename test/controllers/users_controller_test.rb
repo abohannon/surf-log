@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @user = users(:one)
+    @user = users(:adam)
   end
 
   test "should get index" do
@@ -13,16 +13,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
     get signup_path
     assert_response :success
-  end
-
-  test "should create user" do
-    get signup_path
-
-    assert_difference('User.count') do
-      post user_path, params: { user: { email: @user.email, name: @user.name } }
-    end
-
-    assert_redirected_to user_path(User.last)
   end
 
   test "should show user" do
