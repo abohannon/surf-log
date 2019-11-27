@@ -2,6 +2,10 @@ module.exports = {
   theme: {
     extend: {}
   },
-  variants: {},
+  variants: {
+    textColor: ["responsive", "hover", "focus", "visited"],
+    backgroundColor: ["responsive", "hover", "focus", "active"],
+    textDecoration: ["responsive", "hover", "focus", "active", "group-hover"]
+  },
   plugins: []
-}
+};
