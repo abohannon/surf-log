@@ -1,0 +1,17 @@
+<div class="w-full max-w-xs">
+
+  <%= form_for(:session, url: login_path, html: { class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" }) do |form| %>
+    <div class="mb-4">
+      <%= form.label :email, class: "block text-gray-700 text-sm font-bold mb-2" %>
+      <%= form.email_field :email, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: "your@email.com" %>
+    </div>
+    <div class="mb-4">
+      <%= form.label :password, class: "block text-gray-700 text-sm font-bold" %>
+      <%= form.password_field :password, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline", placeholder: "**********" %>
+    </div>
+    <div>
+    <%= form.submit "Log in", class: "w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+    </div>
+  <% end %>
+  <p>New user? <%= link_to "Sign up here.", signup_path %></p>
+</div>

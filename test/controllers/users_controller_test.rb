@@ -25,11 +25,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should update user" do
-    patch user_path(@user), params: { user: { email: @user.email, name: @user.name } }
-    assert_redirected_to user_path(@user)
-  end
-
   test "should destroy user" do
     assert_difference('User.count', -1) do
       delete user_path(@user)
