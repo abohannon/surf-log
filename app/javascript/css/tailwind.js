@@ -3,7 +3,7 @@ module.exports = {
     extend: {}
   },
   variants: {
-    textColor: ["responsive", "hover", "focus", "visited"],
+    textColor: ["responsive", "focus", "visited", "hover"],
     backgroundColor: ["responsive", "hover", "focus", "active"],
     textDecoration: ["responsive", "hover", "focus", "active", "group-hover"]
   },
