@@ -12,7 +12,9 @@
 
   <body class="h-screen">
     <%= render 'layouts/nav' %>
-    <%= yield %>
+    <div class="p-6">
+      <%= yield %>
+    </div>
     <%= debug(params) if Rails.env.development? %>
   </body>
 </html>
