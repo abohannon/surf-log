@@ -1,12 +1,5 @@
 <% provide(:title, "Log in") %>
 <div class="flex items-center flex-col pt-12">
-  <% if flash[:danger].present? %>
-    <div class="mb-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-      <p class="text-sm">
-        <%= flash[:danger] %>
-      </p>
-    </div>
-  <% end %>
   <%= flash[:message] %>
   <%= render 'login_form' %>
 </div>
