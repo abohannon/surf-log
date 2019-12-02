@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :locations
+  resources :entries
   root    'static_pages#home'
 
   get     '/help',            to: 'static_pages#help'

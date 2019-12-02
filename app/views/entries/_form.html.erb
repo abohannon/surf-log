@@ -1,0 +1,72 @@
+<%= form_with(model: entry, local: true) do |form| %>
+  <% if entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
+
+      <ul>
+        <% entry.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.time_select :start_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_time %>
+    <%= form.time_select :end_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.number_field :rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wave_height %>
+    <%= form.text_field :wave_height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tide_height %>
+    <%= form.text_field :tide_height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tide_direction %>
+    <%= form.text_field :tide_direction %>
+  </div>
+
+  <div class="field">
+    <%= form.label :primary_swell_direction %>
+    <%= form.text_field :primary_swell_direction %>
+  </div>
+
+  <div class="field">
+    <%= form.label :primary_swell_angle %>
+    <%= form.number_field :primary_swell_angle %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

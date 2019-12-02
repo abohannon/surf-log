@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Entries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Date</th>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>Rating</th>
+      <th>Wave height</th>
+      <th>Tide height</th>
+      <th>Tide direction</th>
+      <th>Primary swell direction</th>
+      <th>Primary swell angle</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entries.each do |entry| %>
+      <tr>
+        <td><%= entry.location %></td>
+        <td><%= entry.date %></td>
+        <td><%= entry.start_time %></td>
+        <td><%= entry.end_time %></td>
+        <td><%= entry.rating %></td>
+        <td><%= entry.wave_height %></td>
+        <td><%= entry.tide_height %></td>
+        <td><%= entry.tide_direction %></td>
+        <td><%= entry.primary_swell_direction %></td>
+        <td><%= entry.primary_swell_angle %></td>
+        <td><%= entry.description %></td>
+        <td><%= link_to 'Show', entry %></td>
+        <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+        <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entry', new_entry_path %>

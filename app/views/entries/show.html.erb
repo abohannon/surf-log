@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @entry.location %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @entry.date %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @entry.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @entry.end_time %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @entry.rating %>
+</p>
+
+<p>
+  <strong>Wave height:</strong>
+  <%= @entry.wave_height %>
+</p>
+
+<p>
+  <strong>Tide height:</strong>
+  <%= @entry.tide_height %>
+</p>
+
+<p>
+  <strong>Tide direction:</strong>
+  <%= @entry.tide_direction %>
+</p>
+
+<p>
+  <strong>Primary swell direction:</strong>
+  <%= @entry.primary_swell_direction %>
+</p>
+
+<p>
+  <strong>Primary swell angle:</strong>
+  <%= @entry.primary_swell_angle %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @entry.description %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>

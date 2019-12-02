@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  date: 2019-12-01
+  start_time: 2019-12-01 16:36:55
+  end_time: 2019-12-01 16:36:55
+  rating: 1
+  wave_height: MyString
+  tide_height: 1.5
+  tide_direction: MyString
+  primary_swell_direction: MyString
+  primary_swell_angle: 1
+  description: MyText
+
+two:
+  location: MyString
+  date: 2019-12-01
+  start_time: 2019-12-01 16:36:55
+  end_time: 2019-12-01 16:36:55
+  rating: 1
+  wave_height: MyString
+  tide_height: 1.5
+  tide_direction: MyString
+  primary_swell_direction: MyString
+  primary_swell_angle: 1
+  description: MyText

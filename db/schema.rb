@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_01_051134) do
+ActiveRecord::Schema.define(version: 2019_12_02_004315) do
+
+  create_table "entries", force: :cascade do |t|
+    t.string "location"
+    t.date "date"
+    t.time "start_time"
+    t.time "end_time"
+    t.integer "rating"
+    t.string "wave_height"
+    t.float "tide_height"
+    t.string "tide_direction"
+    t.string "primary_swell_direction"
+    t.integer "primary_swell_angle"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "name"
+    t.float "lat"
+    t.float "lon"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
