@@ -38,4 +38,8 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
+
+  def require_login
+    redirect_to login_path unless !current_user.nil?
+  end
 end

@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :locations
-  resources :entries
   root    'static_pages#home'
 
   get     '/help',            to: 'static_pages#help'
@@ -13,4 +11,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :account_activations, only: [:edit]
+  resources :locations
+  resources :entries
 end

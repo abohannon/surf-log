@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+  before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   # GET /locations
@@ -24,17 +25,17 @@ class LocationsController < ApplicationController
   # POST /locations
   # POST /locations.json
   def create
-    @location = Location.new(location_params)
+    extended_params = location_params
+    extended_params[:user_id] = current_user.id
 
-    respond_to do |format|
+    @location = Location.new(extended_params)
       if @location.save
-        format.html { redirect_to @location, notice: 'Location was successfully created.' }
-        format.json { render :show, status: :created, location: @location }
+        flash[:info] = "Location created."
+        redirect_to @location
       else
-        format.html { render :new }
-        format.json { render json: @location.errors, status: :unprocessable_entity }
+        flash[:error] = "Error saving location"
+        render "new"
       end
-    end
   end
 
   # PATCH/PUT /locations/1
