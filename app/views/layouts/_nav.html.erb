@@ -18,7 +18,10 @@
       </a>
     </div>
     <% if logged_in? %>
-      <%= render 'layouts/account_dropdown' %>
+      <%= render "layouts/account_dropdown" %>
+      <%= link_to new_entry_path, class: "hover:bg-transparent" do %>
+        <%= render "svg/icon_plus_circle", local_classes: 'mx-2 fill-current text-teal-200 hover:text-white visited:text-teal-200 cursor-pointer' %>
+      <% end %>
     <% else %>
       <div class="flex justify-center">
         <%= link_to "Log in", login_path, class: "inline-block sm:text-center md:text-center text-sm px-4 py-2 leading-none border rounded text-white visited:text-white border-white hover:border-transparent hover:bg-white mt-4 lg:mt-0 hover:text-teal-500" %>
