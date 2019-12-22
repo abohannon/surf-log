@@ -13,58 +13,58 @@
   <div class="flex flex-wrap mx-3 mb-6">
 
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <%= render "common/form_label", label: "Location" %>
-      <%= form.text_field :location, class: "appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" %>
+      <%= form.label :location, class: "input-label" %>
+      <%= form.text_field :location, class: "input-field" %>
     </div>
 
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <%= render "common/form_label", label: "Date" %>
+      <%= form.label :date, class: "input-label" %>
       <%= form.date_select :date %>
     </div>
 
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <%= render "common/form_label", label: "Start Time" %>
+      <%= form.label :start_time, class: "input-label" %>
       <%= form.time_select :start_time %>
     </div>
 
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <%= render "common/form_label", label: "End Time" %>
+      <%= form.label :end_time, class: "input-label" %>
       <%= form.time_select :end_time %>
     </div>
 
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <%= render "common/form_label", label: "Rating" %>
-      <%= form.number_field :rating %>
+      <%= form.label :rating, class: "input-label" %>
+      <%= form.number_field :rating, class: "input-field" %>
     </div>
 
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <%= render "common/form_label", label: "Wave Height" %>
-      <%= form.text_field :wave_height %>
+      <%= form.label :wave_height, class: "input-label" %>
+      <%= form.text_field :wave_height, class: "input-field" %>
     </div>
 
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <%= render "common/form_label", label: "Tide Height" %>
-      <%= form.text_field :tide_height %>
+      <%= form.label :tide_height, class: "input-label" %>
+      <%= form.text_field :tide_height, class: "input-field" %>
     </div>
 
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <%= render "common/form_label", label: "Tide Direction" %>
-      <%= form.text_field :tide_direction %>
+      <%= form.label :tide_direction, class: "input-label" %>
+      <%= form.text_field :tide_direction, class: "input-field" %>
     </div>
 
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <%= render "common/form_label", label: "Primary Swell Direction" %>
-      <%= form.text_field :primary_swell_direction %>
+      <%= form.label :primary_swell_direction, class: "input-label" %>
+      <%= form.text_field :primary_swell_direction, class: "input-field" %>
     </div>
 
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <%= render "common/form_label", label: "Primary Swell Angle" %>
-      <%= form.number_field :primary_swell_angle %>
+      <%= form.label :primary_swell_angle, class: "input-label" %>
+      <%= form.number_field :primary_swell_angle, class: "input-field" %>
     </div>
 
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <%= form.label :description, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
-      <%= form.text_area :description %>
+      <%= form.label :description, class: "input-label" %>
+      <%= form.text_area :description, class: "input-field" %>
     </div>
 
     <div class="actions">
