@@ -1,4 +1,4 @@
-<%= form_for(:entry, url: new_entry_path, html: { class: "w-full max-w-lg" }) do |form| %>
+<%= form_for(:entry, url: entries_path, html: { class: "w-full max-w-lg" }) do |form| %>
   <% if entry.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
@@ -11,30 +11,30 @@
     </div>
   <% end %>
   <div class="flex flex-wrap mx-3 mb-6">
-
-    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+    <h1 class="title px-3 pb-3">Log a new session</h1>
+    <div class="w-full px-3 mb-6 md:mb-0">
       <%= form.label :location, class: "input-label" %>
       <%= form.text_field :location, class: "input-field" %>
     </div>
 
-    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+    <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
       <%= form.label :date, class: "input-label" %>
-      <%= form.date_select :date %>
+      <%= form.date_field :date, placeholder: "mm/dd/yy", class: "input-field" %>
+    </div>
+
+    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+      <%= form.label "Rating (1-5)", class: "input-label" %>
+      <%= form.number_field :rating, value: "1", min: "1", max: "5", class: "input-field" %>
     </div>
 
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
       <%= form.label :start_time, class: "input-label" %>
-      <%= form.time_select :start_time %>
+      <%= form.time_field :start_time, value: "06:00", class: "input-field" %>
     </div>
 
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
       <%= form.label :end_time, class: "input-label" %>
-      <%= form.time_select :end_time %>
-    </div>
-
-    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <%= form.label :rating, class: "input-label" %>
-      <%= form.number_field :rating, class: "input-field" %>
+      <%= form.time_field :end_time, value: "08:00", class: "input-field" %>
     </div>
 
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -62,13 +62,13 @@
       <%= form.number_field :primary_swell_angle, class: "input-field" %>
     </div>
 
-    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+    <div class="w-full px-3 mb-6 md:mb-0">
       <%= form.label :description, class: "input-label" %>
       <%= form.text_area :description, class: "input-field" %>
     </div>
 
-    <div class="actions">
-      <%= form.submit %>
+    <div class="actions px-3 pt-3">
+      <%= form.submit class: "btn btn-blue" %>
     </div>
   </div>
 <% end %>
