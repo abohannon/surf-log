@@ -9,13 +9,9 @@
     </button>
   </div>
   <div id="menu-body" class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto ">
-    <div class="text-sm lg:flex-grow">
-      <a href="/users" class="block mt-4 sm:text-center md:text-center lg:inline-block lg:mt-0 text-teal-200 hover:bg-transparent hover:text-white visited:text-teal-200 mx-2">
-        Users
-      </a>
-      <a href="/about" class="block mt-4 sm:text-center md:text-center lg:inline-block lg:mt-0 text-teal-200 hover:bg-transparent hover:text-white visited:text-teal-200 mx-2">
-        About
-      </a>
+    <div class="lg:flex-grow">
+      <%= link_to "Surfers", users_path, class: "block mt-4 sm:text-center md:text-center lg:inline-block lg:mt-0 text-teal-200 hover:bg-transparent hover:text-white visited:text-teal-200 mx-2" %>
+      <%= link_to "Locations", locations_path, class: "block mt-4 sm:text-center md:text-center lg:inline-block lg:mt-0 text-teal-200 hover:bg-transparent hover:text-white visited:text-teal-200 mx-2" %>
     </div>
     <% if logged_in? %>
       <%= render "layouts/account_dropdown" %>

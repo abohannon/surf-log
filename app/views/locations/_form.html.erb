@@ -1,52 +1,84 @@
-<%= form_with(model: location, local: true) do |form| %>
-  <% if location.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>
-
-      <ul>
-        <% location.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+<%= form_for(:location, url: locations_path, html: { class: "w-full max-w-lg" }) do |form| %> <% if
+location.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(location.errors.count, "error") %> prohibited this location
+      from being saved:
+    </h2>
+    <ul>
+      <% location.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
   </div>
-
-  <div class="field">
-    <%= form.label :lat %>
-    <%= form.text_field :lat %>
+<% end %>
+<div class="flex flex-wrap mx-3 mb-6">
+  <h1 class="title px-3 pb-3">Add a new location</h1>
+  <div class="w-full px-3 mb-6 md:mb-2">
+    <%= form.label :name, class: "input-label" %>
+    <%= form.text_field :name, class: "input-field" %>
   </div>
-
-  <div class="field">
-    <%= form.label :lon %>
-    <%= form.text_field :lon %>
+  <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+    <%= form.label :lat, class: "input-label" %>
+    <%= form.text_field :lat, class: "input-field" %>
   </div>
-
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
+  <div class="w-full md:w-1/2 px-3 md:mb-0">
+    <%= form.label :lon, class: "input-label" %>
+    <%= form.text_field :lon, class: "input-field" %>
   </div>
-
-  <div class="field">
-    <%= form.label :state %>
-    <%= form.text_field :state %>
+  <p class="w-full text-gray-600 text-xs italic px-3 mb-6 md:mb-3"><a href="https://www.latlong.net/" target="_blank">Click here to find latitude and longitude.</a></p>
+  <div class="w-full px-3 mb-6 md:mb-2">
+    <%= form.label :city, class: "input-label" %>
+    <%= form.text_field :city, class: "input-field" %>
   </div>
-
-  <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country %>
+  <div class="w-full md:w-1/2 px-3 mb-6 md:mb-2">
+    <%= form.label :state, class: "input-label" %>
+    <%= form.text_field :state, class: "input-field" %>
   </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="w-full md:w-1/2 px-3 mb-6 md:mb-2">
+    <%= form.label :country, class: "input-label" %>
+    <%= form.text_field :country, class: "input-field" %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="w-full px-3 mb-3">
+    <%= form.label "Best Swell Direction", class: "input-label" %>
+    <%= form.select( :swell_direction, [
+      ['N', 'n'],
+      ['NNW', 'nnw'],
+      ['NW', 'nw'],
+      ['WNW', 'wnw'],
+      ['W', 'w'],
+      ['WSW', 'wsw'],
+      ['SW', 'sw'],
+      ['SSW', 'ssw'],
+      ['S', 's'],
+      ['SSE', 'sse'],
+      ['SE', 'se'],
+      ['ESE', 'ese'],
+      ['E', 'e'],
+      ['ENE', 'ene'],
+      ['NE', 'ne'],
+      ['NNE', 'nne'],
+      ], {}, { :multiple => true, :class => "form-multiselect mt-1 block w-full" }) %>
   </div>
+  <p class="w-full text-gray-600 text-xs italic px-3 mb-6 md:mb-6">Select multiple by holding the shift key.</p>
+  <div class="w-full px-3 mb-6 md:mb-3">
+    <%= form.label "Best Tide", class: "input-label" %>
+    <%= form.select( :tide, [['Rising', 'rising'], ['Falling', 'falling'], ['High', 'high'], ['Mid', 'mid'], ['Low', 'low']], {}, { :class => "form-select mt-1 block w-full mb-3" } )%>
+  </div>
+  <div class="w-full px-3 mb-6 md:mb-3">
+    <%= form.label "Skill Level", class: "input-label" %>
+    <%= form.select(:skill_level, [['Beginner', 1], ['Intermediate', 2], ['Advanced', 3]], {}, { :class => "form-select mt-1 block w-full mb-3" }) %>
+  </div>
+  <div class="w-full px-3 mb-6 md:mb-2">
+    <%= form.label :description, class: "input-label" %>
+    <%= form.text_area :description, class: "input-field" %>
+  </div>
+  <div class="flex justify-end w-full px-3 mb-6 md:mb-2">
+    <%= form.label :private, class: "input-label mr-3" %>
+    <%= form.check_box :private, class: "form-checkbox mr-2 cursor-pointer" %>
+  </div>
+  <div class="actions px-3 pt-3">
+    <%= form.submit class: "btn btn-blue" %>
+  </div>
+</div>
 <% end %>

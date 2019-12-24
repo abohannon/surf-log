@@ -1,4 +1,9 @@
 {
   "css.validate": false,
-  "scss.validate": false
+  "scss.validate": false,
+  "ruby.rubocop.onSave": true,
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.erb": "erb"
+  }
 }

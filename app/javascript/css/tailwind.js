@@ -7,5 +7,5 @@ module.exports = {
     backgroundColor: ["responsive", "hover", "focus", "active"],
     textDecoration: ["responsive", "hover", "focus", "active", "group-hover"]
   },
-  plugins: []
+  plugins: [require("@tailwindcss/custom-forms")]
 };
