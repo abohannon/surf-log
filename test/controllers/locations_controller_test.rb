@@ -24,13 +24,15 @@ class LocationsControllerTest < ActionDispatch::IntegrationTest
   test "should create location" do
     log_in_as(@user)
     assert_difference('Location.count') do
-      post locations_url, params: { location: { city:           @location.city,
-                                                country:        @location.country,
-                                                description:    @location.description,
-                                                lat:            @location.lat,
-                                                lon:            @location.lon,
-                                                name:           @location.name,
-                                                state:          @location.state } }
+      post locations_url, params: { location: { city:             @location.city,
+                                                country:          @location.country,
+                                                description:      @location.description,
+                                                lat:              @location.lat,
+                                                lon:              @location.lon,
+                                                name:             @location.name,
+                                                state:            @location.state,
+                                                swell_direction:  @location.swell_direction,
+                                                } }
     end
 
     location = Location.last
